@@ -5,7 +5,7 @@
     "baseUrl": "",
     "outDir": "dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -22,7 +22,22 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "assets": [
+        "dist/assets/assets",
+        "dist/assets"
+      ],
+      "vendors": [
+        "dist/vendors/vendors",
+        "dist/vendors"
+      ],
+      "@app/services/": ["./src/services/*"],
+      "@app/config/*": ["./src/config/*"],
+      "@app/models/*": ["./src/models/*"],
+      "@app/tools/*": ["./src/tools/*"],
+      "@app/assets/*": ["./src/assets/*"],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
