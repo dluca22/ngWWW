@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'test1', pathMatch: 'full' },
       {
-        path: 'test1', component: NavbarComponent,
+        path: 'test11', component: NavbarComponent,
         data: { testo: 'lol' }
       },
       {
