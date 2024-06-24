@@ -3,15 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar.component';
 import { SidebarComponent } from './shared/sidebar.component';
+import { AppMenuComponent } from './layout/app.menu.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SidebarComponent,
+    component: AppMenuComponent,
     children: [
       { path: '', redirectTo: 'test1', pathMatch: 'full' },
       {
-        path: 'test11', component: NavbarComponent,
+        path: 'test1', component: AppMenuComponent,
         data: { testo: 'lol' }
       },
       {
