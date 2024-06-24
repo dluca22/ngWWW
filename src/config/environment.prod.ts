@@ -5,7 +5,6 @@ export const environment = {
   host: '',
   port: 8080,
   authKey:'sportFanta',
-  coreHost: '',
   login: {
     user: '',
     pwd: '',

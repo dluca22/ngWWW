@@ -9,8 +9,6 @@ export interface Config {
   host: string;
   port: number;
   secure: boolean;
-  coreHost?: string;
-  corePort?: number;
 }
 
 
@@ -21,43 +19,31 @@ export class ConfigService {
   private $config: Config;
   get config() { return this.$config; }
 
-  constructor(
-    private http: HttpClient
-  ) {
+  constructor( ) {
     console.info('CONFIG SERVICE CONSTRUCTOR');
    }
 
   load = () => {
-    return this.http.get<any>('/assets/config/env.json')
-    .toPromise()
-    .then(data => {
-      if (environment.production){
-        var info = window.location;
-        this.$config = {
-          production: environment.production,
-          RESTUrl: `${info.protocol}//${info.hostname}:${info.port}/api`,
-          MediaUrl: `${info.protocol}//${info.hostname}:${info.port}/m`,
-          host: info.hostname,
-          port: parseInt(info.port),
-          secure:(info.protocol.startsWith('https')),
-          coreHost: info.hostname,
-          corePort: environment.port
-        }
-      } else {
-        this.$config = {
-            production: environment.production,
-            RESTUrl: `http://${environment.host}:${environment.port}/api`,
-            MediaUrl: `http://${environment.host}:${environment.port}/m`,
-            host: environment.host,
-            port: environment.port,
-            secure:false,
-            coreHost: environment.coreHost,
-            corePort: environment.port
-          }
+    if (environment.production){
+      var info = window.location;
+      this.$config = {
+        production: environment.production,
+        RESTUrl: `${info.protocol}//${info.hostname}:${info.port}/api`,
+        MediaUrl: `${info.protocol}//${info.hostname}:${info.port}/m`,
+        host: info.hostname,
+        port: parseInt(info.port),
+        secure:(info.protocol.startsWith('https'))
       }
-    }, error => {
-      console.log('Error', error);
-    });
-  }
+    } else {
+      this.$config = {
+          production: environment.production,
+          RESTUrl: `http://${environment.host}:${environment.port}/api`,
+          MediaUrl: `http://${environment.host}:${environment.port}/m`,
+          host: environment.host,
+          port: environment.port,
+          secure:false
+        }
+    }
+  };
 }
 
