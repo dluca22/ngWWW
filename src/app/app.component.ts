@@ -31,6 +31,7 @@ export class AppComponent {
 
   ngOnInit() {
 
+
     // this.langsService.$flush();
     // this.langsService.$load();
 

@@ -22,6 +22,7 @@ export class NavbarComponent {
     
 
   ngOnInit() {
+    console.log('gesu in cariola')
 
 
     this.testo =  this.activatedRoute.snapshot.data['testo'] ;
