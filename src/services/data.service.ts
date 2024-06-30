@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { ConfigService } from './config.service';
 import { Observable, forkJoin } from 'rxjs';
-import { isArray } from '@app/tools/functions';
+import { isArray } from '../tools/functions';
 
 @Injectable({
   providedIn: 'root'

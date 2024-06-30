@@ -1,3 +1,23 @@
-<h1>
-  Hello World
-</h1>
+<header class="header">
+  <ul>
+    <li routerLinkActive="'active'">
+      <button>
+        <a class="nav-link" routerLink="home">
+          <span>Home</span>
+        </a>
+      </button>
+    </li>
+    <li routerLinkActive="'active'">
+      <button>
+        <a class="nav-link" routerLink="news">
+          <span>News</span>
+        </a>
+      </button>
+    </li>
+    <li>Regolamento</li>
+    <li>Formazioni</li>
+    <li>sign in</li>
+    <li>login</li>
+  </ul>
+</header>
+<router-outlet></router-outlet>

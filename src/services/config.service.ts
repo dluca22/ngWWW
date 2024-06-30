@@ -1,7 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '@env/environment';
-import { Config } from '../models';
+import { environment } from 'assets/environments/environment';
+
+export interface Config {
+
+  production: boolean;
+  RESTUrl: string;
+  MediaUrl: string;
+  host: string;
+  port: number;
+  secure: boolean;
+  wsHost: string;
+  wsPort: number;
+  coreHost: string;
+  corePort: number;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -48,23 +61,7 @@ export class ConfigService {
             corePort: environment.corePort
           }
       }
-      this.$config.timeOut = data.timeOut;
-      this.$config.retry = data.retry;
-      this.$config.delay = data.delay;
-      this.$config.configurations = environment.configurations;
-      this.$config.idle = data.idle;
-      this.$config.maxLog = data.maxLog;
-      this.$config.tagsTail = data.tagsTail;
-      this.$config.machineId = data.machineId;
-      this.$config.machineName = data.machineName;
-      this.$config.slPlc = data.slPlc;
-      this.$config.slPlcWs = data.slPlcWs;
-      this.$config.nctlPlc = data.nctlPlc;
-      this.$config.nctlPlcWs = data.nctlPlcWs;
-      this.$config.wctlPlc = data.wctlPlc;
-      this.$config.wctlPlcWs = data.wctlPlcWs;
-      this.$config.wsData = data.wsData;
-      this.$config.ordersNum = data.ordersNum;
+      // this.$config.wsData = data.wsData;
 
     }, error => {
       console.log('Error', error);

@@ -3,8 +3,9 @@ import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { environment } from '../config/environment';
-import { ConfigService } from './config.service';
+// import { ConfigService } from './config.service';
+import { environment } from '@envir/environment';
+import { ConfigService } from '@services/config.service';
 
 // const headers = new HttpHeaders({
 //   'Content-Type':'application/json; charset=utf-8',
