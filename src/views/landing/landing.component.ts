@@ -2,15 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'landing-component',
+  selector: 'app-landing-component',
   standalone: true,
-  imports: [RouterOutlet],
-  template: '<h1>Sono dentro a landing</h1>',
+  template: '<router-oulet></router-oulet>',
 })
-export class LandingComponent {
+export class LandingComponent implements OnInit {
 
   ngOnInit(){
-
     console.log('--- LANDINGGGG ---');
   }
   

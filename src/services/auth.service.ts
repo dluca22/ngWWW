@@ -17,7 +17,7 @@ export class AuthService {
 		})
 	};
 
-	private optionsBearer : Object = {
+	private optionsBearer : object = {
 		'headers': new HttpHeaders({
 			'Content-Type': 'application/json',
 			'Authorization': localStorage.getItem("Bearer")!
@@ -29,7 +29,7 @@ export class AuthService {
 			private apiService: ApiService
 			) {}
 
-  	login(username: String,  password: String) {
+  	login(username: string,  password: string) {
 		return this.http.post<any>(this.apiService +'auth/signin', {
 		    "username": username,
 		    "password": password
@@ -48,7 +48,7 @@ export class AuthService {
 	}
 
 	signup(email: string, password: string, username: string) {
-		let role = ["ROLE_USER"];
+		const role = ["ROLE_USER"];
 
 		return this.http.post<any>(this.apiService+'auth/signup', {
 			"email": 	email,

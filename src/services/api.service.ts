@@ -59,7 +59,7 @@ export class ApiService {
       .pipe(catchError(this.formatErrors));
   }
 
-  put(path: string, body: Object = {}, jsonDdata = true): Observable<any> {
+  put(path: string, body: object = {}, jsonDdata = true): Observable<any> {
     let $options;
     let $body;
 
@@ -67,7 +67,7 @@ export class ApiService {
       $options = this.$options;
       $body = JSON.stringify(body);
     } else {
-      let headers = new HttpHeaders({
+      const headers = new HttpHeaders({
       });
       //, ...{ responseType: 'json'}
       //
@@ -90,7 +90,7 @@ export class ApiService {
       $options = this.$options;
       $body = JSON.stringify(body);
     } else {
-      let headers = new HttpHeaders({
+      const headers = new HttpHeaders({
       });
       //, ...{ responseType: 'json'}
       //

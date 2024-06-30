@@ -9,7 +9,7 @@ import { isArray } from '../tools/functions';
 })
 export class DataService {
   tz:string = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  public ready: boolean = false
+  public ready = false
 
   constructor(
     public apiService: ApiService,

@@ -25,7 +25,7 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "@tools/*": ["tools/src/*"],
+      "@tools/*": ["tools/*"],
       "@services/*": ["services/*"], 
       "@views/*": ["views/*"],
       "@shared/*": ["assets/shared/*"],

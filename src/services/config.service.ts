@@ -34,7 +34,7 @@ export class ConfigService {
     .toPromise()
     .then(data => {
       if (environment.production){
-        var info = window.location;
+        const info = window.location;
         this.$config = {
           production: environment.production,
           RESTUrl: `${info.protocol}//${info.hostname}:${info.port}/api`,

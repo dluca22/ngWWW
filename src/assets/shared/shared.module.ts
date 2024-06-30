@@ -5,8 +5,6 @@ import localeIt from '@angular/common/locales/it';
 import localeEn from '@angular/common/locales/en';
 import { ConfigService } from '../../services/config.service';
 import { DataService } from '../../services/data.service';
-import { LandingComponent } from '../../views/landing/landing.component';
-import { NewsComponent } from '../../views/landing/news.component';
 // import {NgxBootstrapSwitchModule} from 'ngx-bootstrap-switch';
 
 
@@ -18,7 +16,7 @@ class MyErrorHandler implements ErrorHandler {
 }
 
 export function setupAppService(config: ConfigService, dataService:DataService) {
-  let delay = new Promise(resolve => {
+  const delay = new Promise(resolve => {
     setTimeout(resolve, 200, 'Yaaaah!');
   });
   return () => new Promise<void>(resolve => {
@@ -40,8 +38,6 @@ export function setupAppService(config: ConfigService, dataService:DataService) 
 @NgModule({
   imports: [
     // CoreModule,
-    NewsComponent,
-    LandingComponent
 
   ],
   providers: [

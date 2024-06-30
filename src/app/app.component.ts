@@ -6,11 +6,10 @@ import { SharedModule } from '../assets/shared';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, SharedModule, RouterModule],
-  templateUrl: './app.component.html',
-  // template: `<router-outlet></router-outlet>`,
+  template: `<router-outlet></router-outlet>`,
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Sport Fanta';
 
 
