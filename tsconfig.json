@@ -1,20 +1,20 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "",
-    "outDir": "dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": false,
+    "outDir": "./dist/out-tsc",
+    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
@@ -22,22 +22,7 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "paths": {
-      "assets": [
-        "dist/assets/assets",
-        "dist/assets"
-      ],
-      "vendors": [
-        "dist/vendors/vendors",
-        "dist/vendors"
-      ],
-      "@app/services/": ["./src/services/*"],
-      "@app/config/*": ["./src/config/*"],
-      "@app/models/*": ["./src/models/*"],
-      "@app/tools/*": ["./src/tools/*"],
-      "@app/assets/*": ["./src/assets/*"],
-    }
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

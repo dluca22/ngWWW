@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 // import { Logged } from 'src/app/Entity/Logged';
 import { map } from 'rxjs/operators'
-import {environment} from "../config/environment";
 import { ApiService } from './api.service';
 
 @Injectable({
